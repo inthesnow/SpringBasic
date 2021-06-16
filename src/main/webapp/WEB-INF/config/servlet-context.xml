@@ -21,9 +21,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- 해당 패키지를 읽어서 @controller가 붙어 있는 클래스를 beaㅜ(객체)로 생성 -->
-	<context:component-scan base-package="com.simple.controller" />
-	
-	
-	
+	<!-- 해당 패키지를 읽어서 @controller가 붙어 있는 클래스를 bean(객체)로 생성 -->
+	<context:component-scan base-package="com.simple.*" />
+	<!-- 
+	<context:component-scan base-package="com.simple.service" />
+	 -->
+	<!-- 2nd service를 bean으로 생성 -->
+	<!-- 
+	<beans:bean id="scoreService" class="com.simple.service.ScoreServiceImpl"/>
+	 -->
 </beans:beans>
