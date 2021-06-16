@@ -1,8 +1,11 @@
 package com.simple.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.simple.command.ScoreVO;
@@ -24,13 +27,15 @@ public class ScoreController {
 	
 	//3rd
 	@Autowired
-	@Qualifier("xxx")
+	@Qualifier("scoreService")
 	private ScoreService scoreService;
 	
-	//목록화면
+	//목록화면(화면으로 이동할 때 list를 가지고 나간다)
 	@RequestMapping("/scoreList")
-	public void scoreList() {
-			
+	public void scoreList(Model model) {
+		//ArrayList<ScoreVO> list=scoreService.getList(); //모델의 값
+		
+		model.addAttribute("list", scoreService.getList());
 	}
 	
 	
@@ -51,6 +56,6 @@ public class ScoreController {
 	public String regist(ScoreVO vo) {
 		scoreService.regist(vo);
 		
-		return null;
+		return "service/scoreResult";
 	}
 }
