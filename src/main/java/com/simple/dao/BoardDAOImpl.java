@@ -24,7 +24,7 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public void boardDelete(int num) {
+	public void delete(int num) {
 		
 		list.remove(num);
 	}

@@ -8,8 +8,8 @@
  	<insert id="regist">
  		insert into T_BOARD values(T_BOARD_SEQ.nextval, #{name}, #{title}, #{content})
  	</insert>
- 	 <select id="getList" resultType="com.simple.command.BoardVO">
- 	 	select * from T_BOARD
+ 	 <select id="getList" resultType="BoardVO">
+ 	 	select * from T_BOARD order by bno desc
  	 </select>
  	 <delete id="delete">
  	 	delete from T_BOARD where bno =#{num}
