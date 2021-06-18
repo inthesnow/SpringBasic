@@ -27,11 +27,14 @@
 	</bean>
 	
 	<!-- 마이바티스 연결 -->
-	<!-- namespace체크, sqlSessionFactorynean객체를 사용, scaan명령 -->
+	<!-- namespace체크, sqlSessionFactorynean객체를 사용, scan명령 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
+		<!-- xml매퍼의 위치 지정 -->
+		<property name="mapperLocations" value="classpath:/sqlmap/*.xml"/>
 	</bean>
 	
 	<!-- 마이바티스의 인터페이스를 읽어서 사용할수 있도록 처리 -->
 	<mybatis-spring:scan base-package="com.simple.test.mapper"/>
+	<mybatis-spring:scan base-package="com.simple.mapper"/>
 </beans>

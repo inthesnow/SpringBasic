@@ -1,27 +1,45 @@
 package com.simple.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.simple.command.BoardVO;
+import com.simple.mapper.BoardMapper;
 
-public class BoardServiceImpl  implements BoardService{
+@Service("boardService")
+public class BoardServiceImpl implements BoardService {
 
+	
+//	@Autowired
+//	@Qualifier("boardDAO")
+//	private BoardDAO boardDAO;
+	@Autowired
+	private BoardMapper boardMapper;
+	
 	@Override
 	public void boardRegist(BoardVO vo) {
-		// TODO Auto-generated method stub
 		
+		HashMap<String, String > map = new HashMap<String, String>();
+		map.put("name", vo.getName());
+		map.put("title", vo.getTitle());
+		map.put("content", vo.getContent());
+		
+		boardMapper.regist(map);
 	}
 
 	@Override
 	public ArrayList<BoardVO> getList() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return boardMapper.getList();
 	}
 
 	@Override
 	public void boardDelete(int num) {
-		// TODO Auto-generated method stub
 		
+		boardMapper.delete(num);
 	}
-	
+
 }

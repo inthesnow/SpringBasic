@@ -62,8 +62,8 @@ public class ScoreController {
 	@RequestMapping("scoreDelete")
 	public String delete(@RequestParam("num") int num,
 						 RedirectAttributes ra) {
-		System.out.println("log");
 		scoreService.delete(num);
+		System.out.println(num);
 		ra.addFlashAttribute("msg", "삭제처리되었습니다.");
 		return "redirect:/service/scoreList";
 	}

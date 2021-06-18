@@ -9,25 +9,31 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
-	<!-- 핸들러 어댑터, 핸들러 맵핑, 스프링의 여러 어노테이션을 사용할 수 있게 하는 선언 -->
+	<!-- 핸들러 어댑터,핸들러 맵핑 , 스프링의 여러 어노테이션을 사용할 수 있게 하는 선언 -->
 	<annotation-driven />
 
-	<!-- 정적 자원 맵핑 resouces폴더 아래 파일은 컨트롤러로 실행 되지 않고 곧바로 실행 -->
+	<!-- 정적자원 맵핑 resource폴더 아래 파일은 컨트롤러로 실행되지 않고 곧바로 실행-->
 	<resources mapping="/resources/**" location="/resources/" />
 
-	<!--뷰 리졸버 (컨트롤러에서 받아온 경로를 최종적으로 합성) -->
+	<!-- 뷰 리졸버 (컨트롤러에서 받아온 경로를 최종적으로 합성) -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<!-- 해당 패키지를 읽어서 @controller가 붙어 있는 클래스를 bean(객체)로 생성 -->
-	<context:component-scan base-package="com.simple.**" />
+	<!-- 해당 패키지를 읽어서 @Controller가 붙어있는 클래스를 bean(객체)로 생성 -->
+	<context:component-scan base-package="com.simple.*" />
+	
+	
+	
 	<!-- 
 	<context:component-scan base-package="com.simple.service" />
 	 -->
-	<!-- 2nd service를 bean으로 생성 -->
+	
+	<!-- service를 bean으로 생성 -->
 	<!-- 
 	<beans:bean id="scoreService" class="com.simple.service.ScoreServiceImpl"/>
-	 -->
+	-->
+	
+	
 </beans:beans>
