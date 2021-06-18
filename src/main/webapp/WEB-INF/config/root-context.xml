@@ -25,4 +25,13 @@
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
 		<constructor-arg ref="hikariConfig"/>	
 	</bean>
+	
+	<!-- 마이바티스 연결 -->
+	<!-- namespace체크, sqlSessionFactorynean객체를 사용, scaan명령 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!-- 마이바티스의 인터페이스를 읽어서 사용할수 있도록 처리 -->
+	<mybatis-spring:scan base-package="com.simple.test.mapper"/>
 </beans>
