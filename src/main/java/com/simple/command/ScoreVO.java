@@ -1,6 +1,7 @@
 package com.simple.command;
 
 public class ScoreVO {
+	private int bno;
 	private String name;
 	private String kor;
 	private String eng;
@@ -9,11 +10,20 @@ public class ScoreVO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ScoreVO(String name, String kor, String eng) {
+	public ScoreVO(int bno, String name, String kor, String eng) {
 		super();
+		this.bno = bno;
 		this.name = name;
 		this.kor = kor;
 		this.eng = eng;
+	}
+	
+	public int getBno() {
+		return bno;
+	}
+	
+	public void setBno(int bno) {
+		this.bno = bno;
 	}
 
 	public String getName() {

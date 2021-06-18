@@ -1,0 +1,17 @@
+--계정생성
+create user spring identified by spring;
+
+--권한부여
+grant resource, connect to spring;
+
+--테이블 스페이스
+alter user spring DEFAULT tablespace users quota unlimited on users;
+
+create table T_SCORE(
+	bno number primary key
+	name varchar2(10)
+	kor varchar2(10)
+	eng varchar2(10)
+
+);
+create sequence t_score_seq increment

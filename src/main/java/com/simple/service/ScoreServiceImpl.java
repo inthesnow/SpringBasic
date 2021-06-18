@@ -26,4 +26,10 @@ public class ScoreServiceImpl implements ScoreService{
 		return scoreDAO.getList();
 	}
 
+	@Override
+	public void delete(int num) {
+		scoreDAO.delete(num);
+	}
+	
+	
 }
