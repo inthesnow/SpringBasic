@@ -2,26 +2,31 @@ package com.simple.dao;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Repository;
+
 import com.simple.command.BoardVO;
 
-public class BoardDAOImpl implements BoardDAO{
 
+@Repository("boardDAO")
+public class BoardDAOImpl implements BoardDAO {
+	
+	ArrayList<BoardVO> list = new ArrayList<>();
+	
 	@Override
 	public void boardRegist(BoardVO vo) {
-		// TODO Auto-generated method stub
-		
+		list.add(vo);//등록.
 	}
 
 	@Override
 	public ArrayList<BoardVO> getList() {
-		// TODO Auto-generated method stub
-		return null;
+		//DB처리...
+		return list;
 	}
 
 	@Override
-	public void boardDelete(int num) {
-		// TODO Auto-generated method stub
+	public void delete(int num) {
 		
+		list.remove(num);
 	}
-	
+
 }

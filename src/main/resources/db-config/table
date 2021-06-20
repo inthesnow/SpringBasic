@@ -5,6 +5,7 @@ create user spring identified by spring;
 grant resource, connect to spring;
 
 --테이블 스페이스
+<<<<<<< HEAD
 alter user spring DEFAULT tablespace users quota unlimited on users;
 
 create table T_SCORE(
@@ -25,3 +26,14 @@ create table T_BOARD(
 );
 
 create sequence T_BOARD_SEQ increment by 1 start with 1 nocache;
+=======
+create table T_SCORE
+(
+  bno number(10) primary key,
+  name varchar2(20),
+  kor varchar2(20),
+  eng varchar2(20)
+);
+
+create SEQUENCE T_SCORE_SEQ INCREMENT BY 1 START WITH 1 NOCACHE;
+>>>>>>> 3c10e9cf07f93a6cdab1affcf204e881c0fa81b4

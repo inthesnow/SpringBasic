@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.simple.mapper.BoardMapper">
+ 
+ 	<insert id="regist">
+ 		insert into T_BOARD values(T_BOARD_SEQ.nextval, #{name}, #{title}, #{content})
+ 	</insert>
+ 	 <select id="getList" resultType="BoardVO">
+ 	 	select * from T_BOARD order by bno desc
+ 	 </select>
+ 	 <delete id="delete">
+ 	 	delete from T_BOARD where bno =#{num}
+ 	 </delete>
+ </mapper>

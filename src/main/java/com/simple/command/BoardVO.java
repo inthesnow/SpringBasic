@@ -1,13 +1,14 @@
 package com.simple.command;
 
 public class BoardVO {
-	private int bno;
-	private String name;
-	private String title;
-	private String content;
+
+	public int bno;
+	public String name;
+	public String title;
+	public String content;
 	
 	public BoardVO() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public BoardVO(int bno, String name, String title, String content) {
@@ -17,7 +18,7 @@ public class BoardVO {
 		this.title = title;
 		this.content = content;
 	}
-	
+
 	public int getBno() {
 		return bno;
 	}
@@ -49,5 +50,7 @@ public class BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	
 	
 }
