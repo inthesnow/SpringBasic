@@ -23,7 +23,7 @@ public class ScoreDAOImpl implements ScoreDAO{
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
-		String sql = "insert into T_SCOER values(T_SCORE.nextval, ?, ?, ?)";
+		String sql = "insert into T_SCORE values(T_SCORE_SEQ.nextval, ?, ?, ?)";
 		
 		try {
 			conn = dataSource.getConnection();
@@ -81,7 +81,7 @@ public class ScoreDAOImpl implements ScoreDAO{
 			}
 		}
 		
-		return null;
+		return list;
 	}
 	@Override
 	public void delete(int num) {

@@ -1,17 +1,9 @@
 package com.simple.controller;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.simple.command.ReqQuiz01VO;
 import com.simple.command.ReqVO;
 
 @Controller

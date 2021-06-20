@@ -8,10 +8,20 @@ grant resource, connect to spring;
 alter user spring DEFAULT tablespace users quota unlimited on users;
 
 create table T_SCORE(
-	bno number primary key
-	name varchar2(10)
-	kor varchar2(10)
+	bno number primary key,
+	name varchar2(10),
+	kor varchar2(10),
 	eng varchar2(10)
 
 );
-create sequence t_score_seq increment
+create sequence t_score_seq increment by 1 start with 1 nocache;
+
+-- T_BOARD
+create table T_BOARD(
+    bno number(10) primary key,
+    name varchar2(20),
+    title varchar2(20),
+    content varchar2(20)
+);
+
+create sequence T_BOARD_SEQ increment by 1 start with 1 nocache;

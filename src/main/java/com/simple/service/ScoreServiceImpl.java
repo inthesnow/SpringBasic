@@ -16,6 +16,7 @@ public class ScoreServiceImpl implements ScoreService{
 	@Qualifier("scoreDAO")
 	private ScoreDAO scoreDAO;
 	
+	@Override
 	public void regist(ScoreVO vo) {
 		scoreDAO.regist(vo);
 	}
